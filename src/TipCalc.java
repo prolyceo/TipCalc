@@ -13,8 +13,8 @@ public class TipCalc {
 
         System.out.print("What is the tip percentage, up to 100? ");
         double tipPercent = inpS.nextDouble();
-        if (tipPercent <= 0) {
-            System.out.println("The percentage cannot be 0 or less.");
+        if (tipPercent <= 0 || tipPercent > 100) {
+            System.out.println("The percentage cannot be less than 0 or more than 100.");
             System.exit(1);
         }
         inpS.nextLine();
