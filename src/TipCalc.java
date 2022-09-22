@@ -34,10 +34,10 @@ public class TipCalc {
         }
 
         // calculate tip itself
-        double tipAmt = (totalCost / tipPercent);
+        double tipAmt = (totalCost * (tipPercent/100));
 
         // calculate cost with tip
-        double costWithTip = (totalCost + (totalCost / tipPercent));
+        double costWithTip = (totalCost + tipAmt);
 
         // calculate cost per person before tip
         double perPersonNoTip = (totalCost / numOfPeople);
@@ -57,13 +57,13 @@ public class TipCalc {
         String formattedCostPerPerson = decF.format(costPerPerson);
 
         // print
-        System.out.println("Bill before tip: "+formattedInitialC);
-        System.out.println("Tip percentage: "+tipPercent);
-        System.out.println("Total tip: "+formattedTipAmt);
-        System.out.println("Total bill with tip: "+formattedCwithT);
-        System.out.println("Cost per person before tip: "+formattedPerPNT);
-        System.out.println("Tip per person: "+formattedTipPerPerson);
-        System.out.println("Total cost per person: "+formattedCostPerPerson);
+        System.out.println("Bill before tip: $"+formattedInitialC);
+        System.out.println("Tip percentage: "+tipPercent+"%");
+        System.out.println("Total tip: $"+formattedTipAmt);
+        System.out.println("Total bill with tip: $"+formattedCwithT);
+        System.out.println("Cost per person before tip: $"+formattedPerPNT);
+        System.out.println("Tip per person: $"+formattedTipPerPerson);
+        System.out.println("Total cost per person: $"+formattedCostPerPerson);
 
 
         inpS.close();
