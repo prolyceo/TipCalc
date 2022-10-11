@@ -9,8 +9,8 @@ public class TipCalculator {
     void addMeal(double toAdd) {
         totalCostBeforeTip += toAdd;
     }
-    double tipAmt(double cost, double percent){
-        return (cost*(percent/100));
+    double tipAmt() {
+        return (totalCostBeforeTip * (percentage/100));
     }
     double getTipPercentage() {
         return percentage;
@@ -19,13 +19,13 @@ public class TipCalculator {
         return totalCostBeforeTip;
     }
     double totalTip() {
-        return totalCostBeforeTip + tipAmt(totalCostBeforeTip, percentage);
+        return totalCostBeforeTip + tipAmt();
     }
     double perPersonCostBeforeTip() {
         return totalCostBeforeTip / numOfPeople;
     }
     double perPersonTipAmount() {
-        return (tipAmt(totalCostBeforeTip, percentage))/numOfPeople;
+        return (tipAmt())/numOfPeople;
     }
     double perPersonTotalCost() {
         return perPersonTipAmount() + (totalCostBeforeTip/numOfPeople);
